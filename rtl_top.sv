@@ -251,7 +251,7 @@ RG3
         .down_tuser(w_rg3_down_tuser),
         .down_ready(w_gl3_up_ready));
 
-gl3_queue_a # (.D_WIDTH (D_WIDTH))
+gl3456_queue # (.D_WIDTH (D_WIDTH), .ACTIVEPIXCNTR (1'b0), .ACTIVELINECNTR (1'b0))
 GL3
 (       .clk(clk),
         .rst(rst),
@@ -297,7 +297,8 @@ RG4
         .down_tuser(w_rg4_down_tuser),
         .down_ready(w_gl4_up_ready));
 
-gl4_queue_b # (.D_WIDTH (D_WIDTH))
+
+gl3456_queue # (.D_WIDTH (D_WIDTH), .ACTIVEPIXCNTR (1'b1), .ACTIVELINECNTR (1'b0))
 GL4
 (       .clk(clk),
         .rst(rst),
@@ -344,7 +345,7 @@ RG5
         .down_ready(w_gl5_up_ready));
 
 //GL5
-gl5_queue_c # (.D_WIDTH (D_WIDTH))
+gl3456_queue # (.D_WIDTH (D_WIDTH), .ACTIVEPIXCNTR (1'b0), .ACTIVELINECNTR (1'b1))
 GL5
 (       .clk(clk),
         .rst(rst),
@@ -392,7 +393,7 @@ RG6
         .down_ready(w_gl6_up_ready));
 
 //GL6
-gl6_queue_d # (.D_WIDTH (D_WIDTH))
+gl3456_queue # (.D_WIDTH (D_WIDTH), .ACTIVEPIXCNTR (1'b1), .ACTIVELINECNTR (1'b1))
 GL6
 (       .clk(clk),
         .rst(rst),

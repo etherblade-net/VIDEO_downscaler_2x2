@@ -1,4 +1,4 @@
-module gl3_queue_a #(parameter D_WIDTH = 8)
+module gl3456_queue #(parameter D_WIDTH = 8, parameter ACTIVEPIXCNTR = 1, parameter ACTIVELINECNTR =1)
 (
 input                   clk,
 input                   rst,
@@ -37,7 +37,7 @@ always @(posedge clk)
   end
 
 assign down_data = up_data;
-assign down_valid = up_valid & ~pixel_counter & ~line_counter;
+assign down_valid = up_valid & (pixel_counter == ACTIVEPIXCNTR) & (line_counter == ACTIVELINECNTR);
 assign down_tlast = up_tlast;
 assign down_tuser = up_tuser;
 assign up_ready = down_ready;
