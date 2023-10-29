@@ -197,7 +197,7 @@ MDL1
                 end else begin
                   up_tlast = 1'b0;
                 end
-              if ((x_curr == 0) & (y_curr == 0) & (framelock_curr == framelock_value)) 
+              if ((x_curr == 0) & (y_curr == 0) & (framelock_curr == framelock_value))
                 begin
                   up_tuser = 1'b1;
                 end else begin
@@ -229,17 +229,17 @@ MDL1
               begin
                 framelock_curr = framelock_curr + 1;
               end else
-            if ((x_curr == x_max) & (y_curr == y_max)) 
+            if ((x_curr == x_max) & (y_curr == y_max))
               begin
                 x_curr = 0;
                 y_curr = 0;
               end else
-            if ((x_curr == x_max) & (y_curr != y_max)) 
+            if ((x_curr == x_max) & (y_curr != y_max))
               begin
                 x_curr = 0;
                 y_curr = y_curr + 1;
               end else
-            if (x_curr != x_max) 
+            if (x_curr != x_max)
               begin
                 x_curr = x_curr + 1;
               end
