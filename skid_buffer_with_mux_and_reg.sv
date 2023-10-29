@@ -43,11 +43,11 @@ wire sel;
 //DATAPATH
   always @(posedge clk)
     if (we)
-	  begin
+      begin
         data_reg <= up_data;
-	    tlast_reg <= up_tlast;
-	    tuser_reg <= up_tuser;
-	  end
+        tlast_reg <= up_tlast;
+        tuser_reg <= up_tuser;
+      end
 
   always @(posedge clk)
     if (rst)
