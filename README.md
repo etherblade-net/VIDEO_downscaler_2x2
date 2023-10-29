@@ -36,6 +36,11 @@ Also in GS7 all (tuser) “start of the frame” wires will be ORed, and all (tl
 
 "Skid buffer" is needed to register upstream-ready signal. See Clifford Cummings article “Coding And Scripting Techniques For FSM Designs With Synthesis-Optimized, Glitch-Free Outputs” explaining why we register all core outputs.
 
+This is how verilog modules of the design relates to different pipleine stages on the microarchitecture diagram:
+
+![downscaler_pipeline_modules](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/0e76a05d-eca6-4d11-9951-a5ffc1a1506f)
+
+
 This is simulation timing diagram:
 
 ![waveform_diagram](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/fd2d5c87-8b9e-497f-b1fa-47b7cba47409)
