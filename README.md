@@ -38,13 +38,17 @@ This is how verilog modules of the design relates to different pipleine stages o
 
 ![downscaler_pipeline_modules](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/0e76a05d-eca6-4d11-9951-a5ffc1a1506f)
 
-"Skid buffer" is needed to register upstream-ready signal. See Clifford Cummings article “Coding And Scripting Techniques For FSM Designs With Synthesis-Optimized, Glitch-Free Outputs” explaining why we register all core outputs.
+"Skid buffer" (SB1) is needed to register upstream-ready signal. See Clifford Cummings article “Coding And Scripting Techniques For FSM Designs With Synthesis-Optimized, Glitch-Free Outputs” explaining why we register all core outputs.
+
+
 
 These are Quartus RTL view showing all output signals being registered.
 
 ![OutRegs1](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/172959c2-04f4-4c28-97fb-30574cfa4ecf)
 
 ![OutRegs2](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/2a71c9fb-383b-4b7d-99de-24c7b82fc8c8)
+
+
 
 DESIGN SIMULATION / VERIFICATION
 The RTL code is complemented with Transaction level model.
