@@ -41,15 +41,12 @@ This is how verilog modules of the design relates to different pipleine stages o
 ![downscaler_pipeline_modules](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/0e76a05d-eca6-4d11-9951-a5ffc1a1506f)
 
 
-This is simulation timing diagram:
-
-![waveform_diagram](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/fd2d5c87-8b9e-497f-b1fa-47b7cba47409)
-
 DESIGN SIMULATION / VERIFICATION
 The RTL code is complemented with Transaction level model.
-The testbech compares outputs from the model and RTL.
+The testbech compares outputs from the model and RTL (comparison moment is valid data from the RTL).
 
+This is simulation timing diagram showing outputs from the model and outputs from RTL block:
 
-
+![waveform_diagram](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/8638b894-5126-4d01-a4b4-7b1b30ff044f)
 
 
