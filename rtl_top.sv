@@ -1,6 +1,6 @@
 //---TOP MODULE FOR RTL DESIGN---//
 
-module rtl_top #(parameter D_WIDTH = 8, parameter FIFO1_A_WIDTH = 2, parameter FIFO2_A_WIDTH = 1)
+module rtl_top #(parameter D_WIDTH = 8, parameter FIFO1_A_WIDTH = 8, parameter FIFO2_A_WIDTH = 1)
 (
 input                   clk,
 input                   rst,
