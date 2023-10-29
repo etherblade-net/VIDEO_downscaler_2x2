@@ -152,10 +152,10 @@ wire                  w_gl7_down_tuser;
 
 //RG7
 wire                  w_rg7_up_ready;
-wire  [(D_WIDTH-1):0] down_data;
-wire                  down_valid;
-wire                  down_tlast;
-wire                  down_tuser;
+//                    down_data;
+//                    down_valid;
+//                    down_tlast;
+//                    down_tuser;
 
 
 skid_buffer_with_mux_and_reg # (.D_WIDTH (D_WIDTH))
