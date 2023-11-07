@@ -71,6 +71,6 @@ You can see the example of an original picture that was used as a source picture
 
 ![cocotb_converter](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/c1de011c-1ef5-4299-9d21-e520ba7b504a)
 
-Picture (B) is porduced by the core as is. But picture (C) is produced bu the core with inverted output bus.
+Picture (B) is porduced by the core as is. But picture (C) is produced bu the core with inverted output bus (in "gl7_pixel_produce" block).
 
 There are two scenarios in Cocotb picture converter. Scenario1 - where synthesizable RTL is run as DUT. And Scenario2 running BFM (bus functional model) which is made of transaction level model. Both RTL and BFM produce equivalent results (in terms of picture transformation) becuase transaction level model (which is base for BFM) has always been correlating with RTL. 
