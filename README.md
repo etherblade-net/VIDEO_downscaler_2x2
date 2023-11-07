@@ -16,7 +16,7 @@ This is microarchitectural diagram of the design:
 ![downscaler_pipeline](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/8e5f80ca-8682-4d2f-815c-d3cb8455b7af)
 
 “Stream lock” glue logic (GL1) contains FSM that will be waiting for arrival of a pixel marked with “Start_of_frame” (tuser) bit and lock the stream by permitting “valid” to propagate downstream. It will remain in “locked state” forever (until global reset).
-   
+
 “Stream fork” will replicate stream into four streams.
 
 “Write to queues” contain glue logic clouds before FIFOs that selectively allow write pixels into corresponding FIFO.
@@ -57,5 +57,3 @@ The testbech compares outputs from the model and RTL (comparison moment is valid
 This is simulation timing diagram showing outputs from the model and outputs from RTL block:
 
 ![waveform_diagram](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/8638b894-5126-4d01-a4b4-7b1b30ff044f)
-
-
