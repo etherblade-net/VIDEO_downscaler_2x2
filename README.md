@@ -50,10 +50,23 @@ These are Quartus RTL view showing all output signals being registered.
 
 
 
-DESIGN SIMULATION / VERIFICATION
+## Design SIMULATION / VERIFICATION
+
 The RTL code is complemented with Transaction level model.
 The testbech compares outputs from the model and RTL (comparison moment is valid data from the RTL).
 
 This is simulation timing diagram showing outputs from the model and outputs from RTL block:
 
 ![waveform_diagram](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/8638b894-5126-4d01-a4b4-7b1b30ff044f)
+
+## Cocotb picture converter
+
+There is separate environment that uses python and cocotb to process real PNG picture by the downscaler core.
+Python takes a PNG picture, converts it into NumPY array and via Cocotb feeds into RTL module in form of AXI-stream.
+RTL code is running on a simulator (IcarusVerilog).
+On the other end Python takes AXI-stream of 2x2 downscaled picture, stores it into a NumPY array and after simulation finishes saves that as a PNG picture.
+
+You can see the result of an original picture that was fed to RTL core and diminished pictures produced by the RTL core:
+
+
+
