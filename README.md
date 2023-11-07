@@ -20,7 +20,7 @@ This is microarchitectural diagram of the design:
 “Stream fork” will replicate stream into four streams.
 
 “Write to queues” contain glue logic clouds before FIFOs that selectively allow write pixels into corresponding FIFO.
-Each glue logic blocks (GL3, GL4, GL5, GL6) contain two 1-bit counters: “pixel_counter” and “line_counter”. 
+Each glue logic blocks (GL3, GL4, GL5, GL6) contain two 1-bit counters: “pixel_counter” and “line_counter”.
 “pixel_counter” will toggle upon processing of every pixel in the line.
 “line_counter” will be toggled by processing of every last pixel in the line (pixel marked with tlast).
 
