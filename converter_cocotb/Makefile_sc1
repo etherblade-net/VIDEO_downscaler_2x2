@@ -1,0 +1,28 @@
+# Makefile
+
+# defaults
+SIM ?= icarus
+TOPLEVEL_LANG ?= verilog
+
+
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/tb.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/rtl_top.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/ff_fifo_pow2_depth.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/skid_buffer_with_mux_and_reg.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/pipeline_register_type3.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/gl1_stream_lock.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/gl2_stream_fork.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/gl3456_queue.sv
+VERILOG_SOURCES += $(PWD)/hdl/scenario1/gl7_pixel_produce.sv
+
+# use VHDL_SOURCES for VHDL files
+
+# TOPLEVEL is the name of the toplevel module in your Verilog or VHDL file
+TOPLEVEL = tb
+
+# MODULE is the basename of the Python test file
+MODULE = init_scenario1
+
+# include cocotb's make rules to take care of the simulator setup
+include $(shell cocotb-config --makefiles)/Makefile.sim
+
