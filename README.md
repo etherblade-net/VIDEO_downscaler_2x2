@@ -61,15 +61,16 @@ This is simulation timing diagram showing outputs from the model and outputs fro
 
 ## Cocotb picture converter
 
-There is separate environment that uses python and cocotb to process real PNG picture by the downscaler core.
+There is separate environment that uses python and cocotb to process real PNG picture by the Video_Downscaler_2x2 core.
+
 Python takes a PNG picture, converts it into NumPY array and via Cocotb feeds into RTL module in form of AXI-stream.
 RTL code is running on a simulator (IcarusVerilog).
 On the other end Python takes AXI-stream of 2x2 downscaled picture, stores it into a NumPY array and after simulation finishes saves that as a PNG picture.
 
-You can see the result of an original picture that was fed to RTL core (A) and diminished pictures produced by the RTL core:
+You can see the example of an original picture that was used as a source picture that was fed into RTL core (picture A) and diminished pictures (picture B,C) produced by the RTL core:
 
 ![cocotb_converter](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/c1de011c-1ef5-4299-9d21-e520ba7b504a)
 
-Picture (B) is porduced by the core. But if we invert output pixel bus then the core will produce picture (C).
+Picture (B) is porduced by the core as is. But picture (C) is produced bu the core with inverted output bus.
 
-There are two scenarios in Cocotb picture converter. Scenario1 - where synthesizable RTL is run as DUT. And Scenario2 where BFM is made of transaction level model. 
+There are two scenarios in Cocotb picture converter. Scenario1 - where synthesizable RTL is run as DUT. And Scenario2 running BFM (bus functional model) which is made of transaction level model. Both RTL and BFM produce equivalent results (in terms of picture transformation) becuase transaction level model (which is base for BFM) has always been correlating with RTL. 
