@@ -66,7 +66,10 @@ Python takes a PNG picture, converts it into NumPY array and via Cocotb feeds in
 RTL code is running on a simulator (IcarusVerilog).
 On the other end Python takes AXI-stream of 2x2 downscaled picture, stores it into a NumPY array and after simulation finishes saves that as a PNG picture.
 
-You can see the result of an original picture that was fed to RTL core and diminished pictures produced by the RTL core:
+You can see the result of an original picture that was fed to RTL core (A) and diminished pictures produced by the RTL core:
 
+![cocotb_converter](https://github.com/etherblade-net/VIDEO_downscaler_2x2/assets/53142676/c1de011c-1ef5-4299-9d21-e520ba7b504a)
 
+Picture (B) is porduced by the core. But if we invert output pixel bus then the core will produce picture (C).
 
+There are two scenarios in Cocotb picture converter. Scenario1 - where synthesizable RTL is run as DUT. And Scenario2 where BFM is made of transaction level model. 
