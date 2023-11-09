@@ -21,7 +21,7 @@ VERILOG_SOURCES += $(PWD)/hdl/scenario1/gl7_pixel_produce.sv
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file
-MODULE = init_scenario1
+MODULE = init_scenario
 
 # include cocotb's make rules to take care of the simulator setup
 include $(shell cocotb-config --makefiles)/Makefile.sim

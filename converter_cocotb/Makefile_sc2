@@ -13,7 +13,7 @@ VERILOG_SOURCES += $(PWD)/hdl/scenario2/bfm_model.sv
 TOPLEVEL = tb
 
 # MODULE is the basename of the Python test file
-MODULE = init_scenario2
+MODULE = init_scenario
 
 # include cocotb's make rules to take care of the simulator setup
 include $(shell cocotb-config --makefiles)/Makefile.sim
