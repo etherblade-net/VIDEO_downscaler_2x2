@@ -28,7 +28,6 @@ logic [(D_WIDTH+1):0] ext_sum_data;
   begin
     if (rst)
     begin
-      up_ready = 1'b1;
       queue_a = {};
       queue_b = {};
       queue_c = {};
@@ -95,14 +94,17 @@ logic [(D_WIDTH+1):0] ext_sum_data;
       end
     end
 
+    //BFM can interact with RTL so we use non-blocking assigments for final model values,
+    //this will help avoid races between RTL and BFM
     if (queue_out.size () != 0)
     begin
-      down_valid = 1'b1;
+      down_valid <= 1'b1;
     end else
     begin
-      down_valid = 1'b0;
+      down_valid <= 1'b0;
     end
-    {down_tlast, down_tuser, down_data} = queue_out [0];
+    up_ready <= 1'b1;
+    {down_tlast, down_tuser, down_data} <= queue_out [0];
 
   end
 ////END OF TLM MODEL////

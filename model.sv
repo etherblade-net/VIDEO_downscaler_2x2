@@ -91,7 +91,9 @@ logic [(D_WIDTH+1):0] ext_sum_data;
         end
       end
     end
-    {down_tlast, down_tuser, down_data} = queue_out [0];
+    //The Model doesn't interact with RTL but let's use non-blocking assigments for final model values,
+    //it is just a good parctice that will help avoid races between RTL and Model
+    {down_tlast, down_tuser, down_data} <= queue_out [0];
 
   end
 ////END OF TLM MODEL////
